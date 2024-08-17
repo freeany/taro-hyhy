@@ -1,6 +1,9 @@
 import { Component, PropsWithChildren } from 'react'
 import { View, Text } from '@tarojs/components'
+import a from '@/api/user'
 import './index.scss'
+
+console.log(a,'aaaaaaa');
 
 export default class Index extends Component<PropsWithChildren> {
 

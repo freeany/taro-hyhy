@@ -1,5 +1,8 @@
+// eslint-disable-next-line import/no-commonjs
+const path = require('path');
+
 const config = {
-  projectName: 'myApp',
+  projectName: 'hyhy',
   date: '2024-8-16',
   designWidth: 750,
   deviceRatio: {
@@ -11,6 +14,11 @@ const config = {
   outputRoot: 'dist',
   plugins: [],
   defineConstants: {
+  },
+  alias: {
+    '@/api': path.resolve(__dirname, '..', 'src/api'),
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
   },
   copy: {
     patterns: [
