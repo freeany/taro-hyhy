@@ -1,4 +1,5 @@
 export default defineAppConfig({
+  "entryPagePath": "pages/category/index",
   pages: [
     'pages/index/index',
     'pages/category/index',
