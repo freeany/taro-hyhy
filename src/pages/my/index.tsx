@@ -9,7 +9,7 @@ export default function My() {
   })
 
   return (
-    <View className='my'>
+    <View className='my page-container'>
       <Text>Hello My!</Text>
     </View>
   )

@@ -1,0 +1,18 @@
+/**app.wxss**/
+@import './assets/fonts.scss';
+
+.page-container {
+  background-color: #f7f4f8;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.img {
+  width: 100%;
+}

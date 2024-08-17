@@ -9,7 +9,7 @@ export default function Category() {
   })
 
   return (
-    <View className='category'>
+    <View className='category page-container'>
       <Text>Hello Category!</Text>
     </View>
   )
