@@ -1,7 +1,7 @@
 import { View, Text } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '@/store'
+import { RootState } from '@/store/index'
 import { updateCount } from '@/store/features/count'
 
 import { AtButton } from 'taro-ui'

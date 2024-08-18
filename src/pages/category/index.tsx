@@ -11,6 +11,7 @@ export default function Category() {
   return (
     <View className='category page-container'>
       <Text>Hello Category!</Text>
+      <Text className='iconfont icon-tuikuan a'></Text>
     </View>
   )
 }
