@@ -28,6 +28,13 @@
       "@/store/*": ["./src/store/*"],
     }
   },
-  "include": ["./src", "./types"],
+  "include": [
+    "./src",
+    "./types"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
   "compileOnSave": false
 }
