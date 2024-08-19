@@ -6,8 +6,6 @@ import { AdvertisementType, BannerType, CategoryLevel1Type, GoodType } from '@/a
 import Banner from '@/components/Banner'
 import './index.scss'
 
-
-
 export default function Index() {
   // [BannerType, CategoryLevel1Type, AdvertisementType, GoodType, GoodType]
   const [bannerList, setBannerList] = useState<BannerType[]>([])

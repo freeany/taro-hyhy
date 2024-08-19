@@ -3,35 +3,35 @@
 
   // 首页背景图
   .window-bgc {
-    height: 200rpx;
+    height: 200px;
     position: absolute;
     width: 100%;
     background-color: #f3514f;
-    border-radius: 0 0 20rpx 20rpx;
+    border-radius: 0 0 20px 20px;
   }
 
   .adver {
     display: flex;
     width: 100%;
-    padding: 10rpx 8rpx;
+    padding: 10px 8px;
     background-color: #fff;
     box-sizing: border-box;
-    border-radius: 18rpx;
+    border-radius: 18px;
     overflow: hidden;
 
     .adver-left {
       width: 50%;
-      padding: 8rpx 8rpx 0rpx 8rpx;
+      padding: 8px 8px 0px 8px;
     }
 
     .adver-right {
       width: 50%;
       display: flex;
       flex-direction: column;
-      padding: 8rpx 8rpx 0rpx 8rpx;
+      padding: 8px 8px 0px 8px;
 
       .view:last-child {
-        padding-top: 8rpx;
+        padding-top: 8px;
       }
     }
 

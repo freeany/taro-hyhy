@@ -94,6 +94,8 @@ class TaroRequest {
 
     // 需要使用 Promise 封装 wx.request，处理异步请求
     return new Promise((resolve, reject) => {
+      console.log(Taro,'Taro.request');
+
       Taro.request({
         ...options,
         success: (res) => {

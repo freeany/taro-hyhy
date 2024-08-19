@@ -3,20 +3,20 @@
   position: relative;
 
   .swiper {
-    height: 320rpx;
-    border-radius: 18rpx;
+    height: 320px;
+    border-radius: 18px;
     overflow: hidden;
   }
 
   .swiper-item {
-    height: 320rpx;
+    height: 320px;
     overflow: hidden;
 
     .img,
     .navigator {
       height: 100%;
       width: 100%;
-      border-radius: 16rpx;
+      border-radius: 16px;
     }
   }
 
@@ -26,21 +26,21 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 16rpx;
+    bottom: 16px;
 
     // 面板指示器
     .rectangle {
-      width: 30rpx;
-      height: 6rpx;
-      margin: 0 8rpx;
-      border-radius: 6rpx;
+      width: 30px;
+      height: 6px;
+      margin: 0 8px;
+      border-radius: 6px;
       background-color: rgba(233, 228, 228, 0.9);
     }
 
     // 轮播图被激活时的样式
     .active {
       background-color: #f3514f;
-      width: 40rpx;
+      width: 40px;
     }
   }
 }
