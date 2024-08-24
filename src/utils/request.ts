@@ -68,7 +68,7 @@ class TaroRequest {
           // 既然用户需要重新进行登录，就需要把之前用户存储的信息(过期的 token) 进行清除
           clearStorage()
           Taro.navigateTo({
-            url: '/pages/login/login'
+            url: '/pages/login/index'
           })
           return Promise.reject(response.data)
         default:

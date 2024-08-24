@@ -1,10 +1,11 @@
 export default defineAppConfig({
-  "entryPagePath": "pages/index/index",
+  "entryPagePath": "pages/my/index",
   pages: [
     'pages/index/index',
     'pages/category/index',
     'pages/cart/index',
-    'pages/my/index'
+    'pages/my/index',
+    "pages/login/index"
   ],
   window: {
     "backgroundTextStyle": "light",

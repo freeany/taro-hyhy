@@ -1,0 +1,139 @@
+.my {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 !important;
+}
+.top-show {
+  width: 100%;
+  height: 360px;
+
+  .top-show-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.bottom-show {
+  margin: 0 16px;
+
+  .section {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .user-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -86px;
+    color: #999;
+
+    .avatar-container {
+      display: flex;
+      align-items: center;
+
+      image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .no-login {
+        display: flex;
+        flex-direction: column;
+        font-size: 24px;
+
+        text:first-child {
+          font-size: 28px;
+        }
+
+        .ellipsis {
+          width: 400px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .order {
+    background-color: #fff;
+    margin-top: 20px;
+
+    .order-title-wrap,
+    .order-content-wrap {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .order-title-wrap {
+      .title {
+        color: #444;
+        // font-weight: 700;
+      }
+
+      .more {
+        color: #ccc;
+        font-size: 24px;
+      }
+    }
+
+    .order-content-wrap {
+      display: flex;
+
+      .iconfont {
+        font-size: 60px;
+        text-align: center;
+      }
+
+      text {
+        font-size: 25px;
+        margin-top: 20px;
+      }
+    }
+
+    .order-content-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .after-scale {
+    margin-top: 30px;
+
+    .order-title-wrap {
+      line-height: 50px;
+    }
+
+    .after-scale-item {
+      display: flex;
+      margin: 25px 15px;
+      color: #999;
+      line-height: 50px;
+
+      text {
+        font-size: 25px;
+        margin-left: 20px;
+      }
+
+      .iconfont {
+        color: #a2b364;
+      }
+    }
+  }
+
+  .info-footer {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #aaa;
+    font-size: 25px;
+  }
+}

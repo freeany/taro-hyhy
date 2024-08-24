@@ -1,0 +1,18 @@
+/* pages/login/login.wxss */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__image__img {
+  width: 180px;
+  height: 180px;
+}
+
+.login__description {
+  margin-top: -40px;
+  padding: 50px 0;
+}
