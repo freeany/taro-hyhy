@@ -4,7 +4,7 @@
   "description": "花颜花语",
   "appid": "wx54e2d76540a5fa13",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "enhance": false,
     "compileHotReLoad": false,

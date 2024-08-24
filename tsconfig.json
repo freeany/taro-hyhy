@@ -22,6 +22,7 @@
       "node_modules/@types"
     ],
     "paths": {
+      "@/assets/*": ["./src/assets/*"],
       "@/api/*": ["./src/api/*"],
       "@/components/*": ["./src/components/*"],
       "@/utils/*": ["./src/utils/*"],

@@ -1,0 +1,39 @@
+/* 导航分类样式 */
+.nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  border-radius: 18px;
+  padding: 10Px 0;
+  background-color: #fff;
+
+  .nav-item {
+    flex: 1;
+    min-width: 20%;
+    max-width: 20%;
+
+    &.small {
+      margin-top: 36px;
+    }
+
+    .navigator-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      .nav-text {
+        margin-top: 4Px;
+        font-size: 12Px;
+      }
+
+      .nav-img {
+        width: 66px;
+        height: 66px;
+      }
+    }
+  }
+}

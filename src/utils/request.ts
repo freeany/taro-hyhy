@@ -93,9 +93,7 @@ class TaroRequest {
     options = this.interceptors.request(options)
 
     // 需要使用 Promise 封装 wx.request，处理异步请求
-    return new Promise((resolve, reject) => {
-      console.log(Taro,'Taro.request');
-
+    return new Promise((resolve, _reject) => {
       Taro.request({
         ...options,
         success: (res) => {

@@ -20,29 +20,29 @@ export default function Banner({ bannerList }: { bannerList: BannerType[] }) {
   }
 
   return (
-    <View className="swiper-box">
+    <View className='swiper-box'>
       <Swiper
         autoplay
-        className="swiper"
+        className='swiper'
         interval={2000}
         duration={1000}
         onChange={getSwiperIndex}
       >
         {
           bannerList.map(item => (
-            <SwiperItem className="swiper-item">
+            <SwiperItem className='swiper-item' key={item.id}>
               <View
-                className="navigator"
+                className='navigator'
                 onClick={() => toGoodsDetail(item.id)}
               >
-                <Image className="img" src={item.imageUrl}></Image>
+                <Image className='img' src={item.imageUrl}></Image>
               </View>
             </SwiperItem>
           ))
         }
       </Swiper>
 
-      <View className="indicator">
+      <View className='indicator'>
         {
           bannerList.map((item, index) => (
             <Text
