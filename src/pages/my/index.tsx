@@ -84,7 +84,7 @@ export default function My() {
               <View className='setting'>
                 <View onClick={() => {
                   Taro.navigateTo({
-                    url: '/modules/settingModule/pages/setting/setting'
+                    url: '/modules/settingModule/pages/setting/index'
                   })
                 }}
                 > 设置 </View>

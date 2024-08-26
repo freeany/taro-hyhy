@@ -3,8 +3,7 @@ import { useLoad } from '@tarojs/taro'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from '@/store/index'
 import { updateCount } from '@/store/features/count'
-
-import { AtButton } from 'taro-ui'
+import { Button } from "@taroify/core"
 
 import './index.scss'
 
@@ -21,12 +20,12 @@ export default function Cart() {
   return (
     <View className='cart page-container'>
       <Text>Hello Cart!{ count }</Text>
-      <AtButton type='primary'
+      <Button color='primary'
         onClick={() => {
           handleClick()
         }}
       >
-      按钮文案</AtButton>
+      按钮文案</Button>
     </View>
   )
 }

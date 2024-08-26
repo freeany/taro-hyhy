@@ -60,6 +60,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ["@taroify"],
     postcss: {
       autoprefixer: {
         enable: true,

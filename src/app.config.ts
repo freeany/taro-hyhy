@@ -5,7 +5,8 @@ export default defineAppConfig({
     'pages/category/index',
     'pages/cart/index',
     'pages/my/index',
-    "pages/login/index"
+    "pages/login/index",
+
   ],
   window: {
     "backgroundTextStyle": "light",
@@ -44,5 +45,20 @@ export default defineAppConfig({
         "selectedIconPath": "assets/tabbar/my-active.png"
       }
     ]
+  },
+  subPackages: [
+    {
+      "root": "modules/settingModule",
+      "name": "settingModule",
+      "pages": [
+        "pages/setting/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/my/index": {
+      "network": "all",
+      "packages": ["settingModule"]
+    },
   },
 })

@@ -1,6 +1,6 @@
 import { View, Image } from '@tarojs/components'
 import Taro, { useLoad } from '@tarojs/taro'
-import { AtButton } from 'taro-ui'
+import { Button } from "@taroify/core"
 import avatarPng from '@/assets/Images/avatar.png'
 import { useDispatch } from 'react-redux'
 import { reqLogin, reqUserInfo } from '@/api/user'
@@ -57,7 +57,7 @@ export default function Login() {
       <Image className='login__image__img' src={avatarPng} mode='widthFix'></Image>
       <View className='login__description'>请点击下方的按钮，授权登陆您的账户～</View>
 
-      <AtButton circle className='bottom-button' type='primary' onClick={login}>点击授权登陆</AtButton>
+      <Button className='bottom-button' shape='round' color='primary' onClick={login}>点击授权登陆</Button>
     </View>
   )
 }

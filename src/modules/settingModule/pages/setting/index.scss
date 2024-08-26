@@ -1,0 +1,57 @@
+.setting-container {
+  padding: 16px;
+}
+
+.setting-list {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+
+  .setting-item {
+    text-align: left;
+    border-radius: 0;
+    background-color: #fff;
+    font-size: 30px;
+    color: #333;
+    height: 90px;
+    line-height: 90px;
+    padding-left: 10px;
+    border-top: 1px solid #ddd;
+    position: relative;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &::after {
+      content: '\e65f';
+      font-family: 'iconfont';
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      font-size: 24px;
+      transform: translateY(-50%);
+      color: #999;
+      border: none;
+    }
+  }
+
+  .concat-button {
+    display: flex;
+    font-size: 30px;
+    color: #333;
+    height: 90px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    line-height: 90px;
+    padding: 10px;
+  }
+}
+
+.setting-item::after {
+  width: auto;
+  height: auto;
+  left: auto;
+  border: none;
+}
