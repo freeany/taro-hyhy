@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import { GoodType } from "@/api/types";
+import { GoodType } from "@/api/types/index.type";
 import { View, Text, Image } from "@tarojs/components";
 import addCartPng from '@/assets/images/buybtn.png'
 import './goodsCard.scss'

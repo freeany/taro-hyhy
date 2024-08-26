@@ -7,7 +7,9 @@ const store = configureStore({
     counter: countSlice,
     user: userSlice
   },
+  devTools: true
 });
+
 
 export type RootState = ReturnType<typeof store.getState>
 export default store

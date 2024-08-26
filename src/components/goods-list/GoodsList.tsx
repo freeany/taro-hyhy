@@ -1,4 +1,4 @@
-import { GoodType } from '@/api/types'
+import { GoodType } from '@/api/types/index.type'
 import { View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import GoodsCard from '../goods-card/GoodsCard'

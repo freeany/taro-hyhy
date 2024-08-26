@@ -1,8 +1,10 @@
 import { View, Text, Image } from '@tarojs/components'
-import Taro, { useLoad } from '@tarojs/taro'
-import { RootState } from '@/store/index'
+import Taro, { useDidShow, useLoad, useReady } from '@tarojs/taro'
 import { useSelector } from 'react-redux'
+import { useCallback, useMemo } from 'react'
 import classNames from 'classnames'
+import { UserInfoType } from '@/api/types/users.type'
+import { RootState } from '@/store/index'
 
 import bannerPng from '@/assets/Images/banner.jpg'
 import avatarPng from '@/assets/Images/avatar.png'
@@ -10,16 +12,22 @@ import './index.scss'
 
 
 export default function My() {
-
   const token = useSelector<RootState, string>(state => state.user.token)
-  const userInfo = useSelector<RootState, any>(state => state.user.userInfo)
-
+  const userInfo = useSelector<RootState, UserInfoType>(state => state.user.userInfo)
 
   useLoad(() => {
-    console.log('Page loaded.')
+    console.log('Page loaded_my.')
+  })
+  useReady(() => {
+    console.log('Page ready_my');
   })
 
-  const initpanel = [
+  useDidShow(() => {
+    console.log('Page useDidShow_my');
+    // Taro.reLaunch()
+  })
+
+  const initpanel = useMemo(() => ([
     {
       url: '/pages/order/list/list',
       title: '商品订单',
@@ -35,13 +43,13 @@ export default function My() {
       title: '退款/售后',
       iconfont: 'icon-tuikuan'
     }
-  ]
+  ]), [])
 
-  const toLoginPage = () => {
+  const toLoginPage = useCallback(() => {
     Taro.navigateTo({
       url: '/pages/login/index'
     })
-  }
+  },[])
   return (
     <View className='my page-container'>
       {/* 顶部展示图 */}
@@ -55,7 +63,7 @@ export default function My() {
 
       <View className='bottom-show'>
         {
-          !token ? (<View className='user-container section' onClick={toLoginPage}>
+          (!token || !userInfo) ? (<View className='user-container section' onClick={toLoginPage}>
             {/* 未登录面板 */}
             <View className='avatar-container'>
               <Image src={avatarPng}></Image>

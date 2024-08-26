@@ -1,4 +1,5 @@
 import http from '@/utils/http'
+import { UserInfoType } from './types/users.type'
 
 /**
  * @description 进行登录操作
@@ -6,7 +7,7 @@ import http from '@/utils/http'
  * @returns Promise
  */
 export const reqLogin = (code) => {
-  return http.get(`/weixin/wxLogin/${code}`)
+  return http.get<{ token: string }>(`/weixin/wxLogin/${code}`)
 }
 
 /**
@@ -14,7 +15,7 @@ export const reqLogin = (code) => {
  * @returns Promise
  */
 export const reqUserInfo = () => {
-  return http.get('/weixin/getuserInfo')
+  return http.get<UserInfoType>('/weixin/getuserInfo')
 }
 
 /**

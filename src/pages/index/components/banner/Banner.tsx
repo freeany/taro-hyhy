@@ -1,5 +1,5 @@
 import { Swiper, SwiperItem, View, Text, Image } from '@tarojs/components'
-import { BannerType } from '@/api/types'
+import { BannerType } from '@/api/types/index.type'
 import Taro from '@tarojs/taro'
 import { useState } from 'react'
 import './banner.scss'

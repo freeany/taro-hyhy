@@ -1,6 +1,6 @@
 import Taro from "@tarojs/taro"
 import { IconType, toast } from "./extendApi"
-import { clearStorage } from "./storage"
+import { clearStorage, getStorage } from "./storage"
 
 interface ApiResult<T> {
   code: number
@@ -17,8 +17,6 @@ type ArrToPromise<T extends any[], R extends any[] = []> =
   ? ArrToPromise<B, [...R, Promise<A>]>
   : R
 
-
-
 type ResponseType<T> =
   {
     data: ApiResult<T>
@@ -32,7 +30,7 @@ class TaroRequest {
     baseURL: process.env.TARO_APP_API, // 请求基准地址
     // 超时时间 1 分钟
     timeout: 60 * 1000,
-    headers: {
+    header: {
       'Content-Type': 'application/json;charset=UTF-8',
     },
   }
@@ -44,6 +42,10 @@ class TaroRequest {
   interceptors = {
     // 请求拦截器
     request(config: TaroRequestOption) {
+      const token = getStorage('token')
+      if (token) {
+        config.header!['token'] = token
+      }
       return config
     },
     async response<T>(response: ResponseType<T>): Promise<T> {

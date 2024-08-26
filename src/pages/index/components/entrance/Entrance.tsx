@@ -1,4 +1,4 @@
-import { CategoryLevel1Type } from '@/api/types'
+import { CategoryLevel1Type } from '@/api/types/index.type'
 import { View, Text, Image } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import classnames from 'classnames'

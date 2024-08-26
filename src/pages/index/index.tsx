@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { View, Image } from '@tarojs/components'
 import { reqIndexData } from '@/api/index'
 import Taro, { useLoad } from '@tarojs/taro'
-import { AdvertisementType, BannerType, CategoryLevel1Type, GoodType } from '@/api/types'
+import { AdvertisementType, BannerType, CategoryLevel1Type, GoodType } from '@/api/types/index.type'
 import GoodsList from '@/components/goods-list/GoodsList'
 
 import Banner from './components/banner/Banner'

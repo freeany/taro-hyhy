@@ -9,7 +9,9 @@ export const CountSlice = createSlice({
   },
   // 这里的属性会自动的导出为actions，在组件中可以直接通过dispatch进行触发
   reducers: {
-    updateCount(state, { payload = 1 }) {
+    updateCount(state, { payload }) {
+      console.log('???????');
+
       // 内置了immutable
       state.count += payload;
     },

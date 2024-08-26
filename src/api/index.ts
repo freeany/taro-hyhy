@@ -1,5 +1,5 @@
 import http from "@/utils/http";
-import { AdvertisementType, BannerType, CategoryLevel1Type, GoodType } from "./types";
+import { AdvertisementType, BannerType, CategoryLevel1Type, GoodType } from "./types/index.type";
 
 export const reqIndexData = () => {
   // 通过并发请求获取首页的数据，提升页面的渲染速度
