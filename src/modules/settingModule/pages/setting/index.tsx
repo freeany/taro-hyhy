@@ -10,7 +10,7 @@ export default function Setting() {
         <View
           onClick={() => {
             Taro.navigateTo({
-              url: '/modules/settingModule/pages/profile/profile'
+              url: '/modules/settingModule/pages/profile/index'
             })
           }}
           hover-className='none'

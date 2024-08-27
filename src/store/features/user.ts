@@ -26,7 +26,6 @@ export const UserSlice = createSlice({
       state.token = payload
     },
     setUserInfo(state, { payload }) {
-      console.log(payload,'payloadp111ayload');
       state.userInfo = payload
     }
   },

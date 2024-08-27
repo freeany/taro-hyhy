@@ -51,7 +51,8 @@ export default defineAppConfig({
       "root": "modules/settingModule",
       "name": "settingModule",
       "pages": [
-        "pages/setting/index"
+        "pages/setting/index",
+        "pages/profile/index"
       ]
     }
   ],

@@ -6,6 +6,14 @@
   min-height: 100vh;
 }
 
+/* 添加这段样式后，Primary Button 会变成红色 */
+:root {
+  --primary-color: #f3514f;
+}
+page {
+  --primary-color: #f3514f;
+}
+
 .container {
   display: flex;
   flex-direction: column;

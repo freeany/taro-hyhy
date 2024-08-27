@@ -24,5 +24,15 @@ export const reqUserInfo = () => {
  * @returns Promise
  */
 export const reqUpdateUserInfo = (userInfo) => {
-  return http.post('/weixin/updateUser', userInfo)
+  return http.post<UserInfoType>('/weixin/updateUser', userInfo)
+}
+
+/**
+ * @description 实现本地资源上传
+ * @param {*} filePath 要上传的文件资源路径
+ * @param {*} name 文件对应的 key
+ * @returns Promise
+ */
+export const reqUploadFile = (filePath, name) => {
+  return http.upload<{data: string}>('/fileUpload', filePath, name)
 }

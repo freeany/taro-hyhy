@@ -1,4 +1,4 @@
-import Taro from "@tarojs/taro"
+import Taro, { uploadFile } from "@tarojs/taro"
 import { IconType, toast } from "./extendApi"
 import { clearStorage, getStorage } from "./storage"
 
@@ -21,7 +21,7 @@ type ResponseType<T> =
   {
     data: ApiResult<T>
   }
-  & { config: TaroRequestOption }
+  & { config: TaroRequestOption | Taro.uploadFile.Option }
   & { isSuccess: boolean }
 
 class TaroRequest {
@@ -83,10 +83,11 @@ class TaroRequest {
   // request 实例方法接收一个对象类型的参数
   request<T>(options: TaroRequestOption): Promise<T> {
     options = {
-      url: this.requestBaseConfig.baseURL + options.url,
       ...this.requestBaseConfig,
+      ...options,
       isLoading: false
     }
+    options.url = this.requestBaseConfig.baseURL + options.url
     // 在请求发送之前，添加 loading 效果
     if (options.isLoading) {
       Taro.showLoading()
@@ -165,6 +166,34 @@ class TaroRequest {
     // 通过展开运算符接收传递的参数
     // 那么展开运算符会将传入的参数转成数组
     return Promise.all(promise)
+  }
+
+  upload<T>(url: string, filePath: string, name = 'file', config = {}) {
+    return new Promise((resolve, _reject) => {
+      Taro.uploadFile({
+        url: process.env.TARO_APP_API + url,
+        /** 要上传文件资源的路径 */
+        filePath,
+        /** 文件对应的 key，开发者在服务端可以通过这个 key 获取文件的二进制内容 */
+        name,
+        success: (res) => {
+          // 需要将服务器返回的 JSON 字符串 通过 JSON.parse 转成对象
+
+          const mergeRes = { data: JSON.parse(res.data), config: { url, filePath, name }, isSuccess: true }
+          console.log(mergeRes, 'me...');
+
+          const data = this.interceptors.response<T>(mergeRes as any)
+          resolve(data)
+        },
+
+        fail: (err) => {
+          // 合并参数\
+          const mergeErr = { data: { ...err }, config: { url, filePath, name }, isSuccess: false }
+          toast('程序出现异常，请联系客服或稍后重试！', IconType.Error)
+          return Promise.reject(mergeErr)
+        },
+      })
+    })
   }
 }
 
