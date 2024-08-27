@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  "entryPagePath": "pages/my/index",
+  "entryPagePath": "pages/category/index",
   pages: [
     'pages/index/index',
     'pages/category/index',
@@ -54,12 +54,23 @@ export default defineAppConfig({
         "pages/setting/index",
         "pages/profile/index"
       ]
-    }
+    },
+    {
+      "root": "modules/goodModule",
+      "name": "goodModule",
+      "pages": [
+        "pages/goods/list/index"
+      ]
+    },
   ],
   "preloadRule": {
     "pages/my/index": {
       "network": "all",
       "packages": ["settingModule"]
+    },
+    "pages/category/index": {
+      "network": "all",
+      "packages": ["goodModule"]
     },
   },
 })

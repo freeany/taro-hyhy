@@ -35,7 +35,7 @@ export default function Index() {
 
   const handleAdvClick = (categoryId: number) => {
     Taro.navigateTo({
-      url: `/modules/goodModule/pages/goods/list/list?category2Id=${categoryId}`
+      url: `/modules/goodModule/pages/goods/list/index?category2Id=${categoryId}`
     })
   }
 

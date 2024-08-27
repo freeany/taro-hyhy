@@ -28,7 +28,7 @@ export default function GoodsList({ title, goodList }: { title: string, goodList
                 className='goods_more_btn'
                 onClick={() => {
                   Taro.navigateTo({
-                    url: '/pages/goods/list/list'
+                    url: '/modules/goodModule/pages/goods/list/index'
                   })
                 }}
                 hover-className='navigator-hover'

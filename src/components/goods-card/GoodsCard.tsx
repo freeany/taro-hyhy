@@ -30,7 +30,7 @@ export default function GoodsCard({ goodItem }: { goodItem: GoodType }) {
               <Text className='Text'>¥</Text>{goodItem.price}
             </View>
             <View className='goods_item_info_origin_price'>
-              <Text className='Text'>¥</Text> 1{goodItem.marketPrice}
+              <Text className='Text'>¥</Text> {goodItem.marketPrice}
             </View>
             {/* 加入购物车图片 */}
             <View className='goods_item_info_btn'>

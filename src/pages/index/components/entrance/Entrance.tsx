@@ -6,7 +6,7 @@ import './entrance.scss'
 
 export default function Entrance({ cateList }: { cateList: CategoryLevel1Type[] }) {
   const navigateTo = (category) => {
-    const url = `/modules/goodModule/pages/goods/list/list?category1Id=${category.id}`
+    const url = `/modules/goodModule/pages/goods/list/index?category1Id=${category.id}`
     Taro.navigateTo({
       url
     })
