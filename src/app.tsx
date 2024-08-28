@@ -9,7 +9,7 @@ const App: React.FC<{
 }> = ({ children }) => {
 
   useLaunch((options) => {
-    console.log(options,'op');
+    console.log(options,'useLaunch options');
   })
 
   return (

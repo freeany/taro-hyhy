@@ -27,6 +27,7 @@
       "@/components/*": ["./src/components/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/store/*": ["./src/store/*"],
+      "@/modules/*": ["./src/modules/*"],
     }
   },
   "include": [

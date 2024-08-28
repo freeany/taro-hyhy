@@ -1,28 +1,77 @@
 import { View } from "@tarojs/components";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button, Empty } from "@taroify/core"
-import Taro, { useLoad } from "@tarojs/taro";
+import Taro, { useLoad, usePullDownRefresh, useReachBottom } from "@tarojs/taro";
 import GoodsCard from "@/components/goods-card/GoodsCard";
+import { reqGoodsList } from "@/modules/goodModule/api/goods";
+import type { Goods } from "@/modules/goodModule/api/types/goods";
+
+import './index.scss'
 
 export default function GoodsList() {
-  const [goodsList, setGoodsList] = useState([])
+  const [goodsList, setGoodsList] = useState<Goods[]>([])
   const [isFinish, setIsFinish] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [total, setTotal] = useState(0)
-  const requestParams = useState({
+  const [requestParams, setRequestParams] = useState({
     page: 1, // 页码
     limit: 10, // 每页请求的条数
     category1Id: '', // 一级分类 id
     category2Id: '' // 二级分类 id
   })
 
-  const getGoodsList = () => {
-    const result = reqGoodsList(requestParams)
-
-  }
+  const getGoodsList = useCallback(async () => {
+    setIsLoading(true)
+    const result = await reqGoodsList(requestParams)
+    setGoodsList([...goodsList, ...result.records])
+    setTotal(result.total)
+    setIsLoading(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [requestParams])
 
   useLoad((options) => {
+    setRequestParams({
+      ...requestParams,
+      category2Id: options.category2Id,
+    })
+  })
 
+  useEffect(() => {
+    if (!requestParams.category2Id) return
+    getGoodsList()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [requestParams])
+
+  usePullDownRefresh(() => {
+    // 将数据进行重置
+    setGoodsList([])
+    setTotal(0)
+    setIsFinish(false)
+    setRequestParams({
+      ...requestParams,
+      page: 1
+    })
+    // 手动关闭下拉刷新的效果
+    Taro.stopPullDownRefresh()
+  })
+
+  // 上拉操作
+  useReachBottom(() => {
+    // 判断 isLoading 状态
+    // 如果状态等于 true，说明请求正在发送中，如果请求正在发送中，就不请求下一页数据
+    if (isLoading) return
+    // 让 goodsList 长度 和 total 进行对比
+    // 如果数据相等，商品列表已经加载完毕
+    if (goodsList.length === total) {
+      setIsFinish(true)
+      return
+    }
+
+    // 页码 + 1
+    setRequestParams({
+      ...requestParams,
+      page: requestParams.page + 1
+    })
   })
 
   return (
@@ -33,8 +82,7 @@ export default function GoodsList() {
           <View className='goods-list'>
             {
               goodsList.map(item => (
-                // <GoodsCard goodItem={item} key={ item.id }></GoodsCard>
-                <View>2</View>
+                <GoodsCard goodItem={item} key={item.id}></GoodsCard>
               ))
             }
 
@@ -55,15 +103,8 @@ export default function GoodsList() {
               查看其他商品
             </Button>
           </Empty>
-
         )
       }
-      {/* <van-empty wx:else description='该分类下暂无商品，去看看其他商品吧～'>
-        <van-button round type='danger' className='bottom-button' bindtap='gotoBack'>
-          查看其他商品
-        </van-button>
-      </van-empty> */}
     </View>
-
   )
 }

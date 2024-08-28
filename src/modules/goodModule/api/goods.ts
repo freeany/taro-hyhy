@@ -1,10 +1,11 @@
 import http from '@/utils/http'
+import { GoodsListData } from './types/goods'
 
 /**
  * @description 获取商品列表数据
  */
 export const reqGoodsList = ({ page, limit, category1Id, category2Id }: { page: number, limit: number, category1Id: string, category2Id: string }) => {
-  return http.get(`/goods/list/${page}/${limit}`, {
+  return http.get<GoodsListData>(`/goods/list/${page}/${limit}`, {
     category1Id, category2Id
   })
 }

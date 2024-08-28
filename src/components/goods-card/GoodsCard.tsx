@@ -1,11 +1,11 @@
 import Taro from "@tarojs/taro";
-import { GoodType } from "@/api/types/index.type";
 import { View, Text, Image } from "@tarojs/components";
 import addCartPng from '@/assets/images/buybtn.png'
+import { Goods } from "@/modules/goodModule/api/types/goods";
 import './goodsCard.scss'
 
 // 列表分类卡片
-export default function GoodsCard({ goodItem }: { goodItem: GoodType }) {
+export default function GoodsCard({ goodItem }: { goodItem: Goods }) {
   return (
     <View className='goods_cart_container'>
       <View
