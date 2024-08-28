@@ -12,7 +12,7 @@ export default function GoodsCard({ goodItem }: { goodItem: Goods }) {
         className='navigator_nav'
         onClick={() => {
           Taro.navigateTo({
-            url: `/modules/goodModule/pages/goods/detail/detail?goodsId=${goodItem.id}`
+            url: `/modules/goodModule/pages/goods/detail/index?goodsId=${goodItem.id}`
           })
         }}
       >

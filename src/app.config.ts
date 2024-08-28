@@ -6,7 +6,6 @@ export default defineAppConfig({
     'pages/cart/index',
     'pages/my/index',
     "pages/login/index",
-
   ],
   window: {
     "backgroundTextStyle": "light",
@@ -59,7 +58,8 @@ export default defineAppConfig({
       "root": "modules/goodModule",
       "name": "goodModule",
       "pages": [
-        "pages/goods/list/index"
+        "pages/goods/list/index",
+        "pages/goods/detail/index"
       ]
     },
   ],

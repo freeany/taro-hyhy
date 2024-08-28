@@ -29,5 +29,14 @@ module.exports = {
       },
       "@taroify/icons",
     ],
+    [
+      "import",
+      {
+        libraryName: "@taroify/commerce",
+        libraryDirectory: "",
+        style: true,
+      },
+      "@taroify/commerce",
+    ]
   ],
 }
