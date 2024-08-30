@@ -14,8 +14,8 @@ export const reqAddCart = ({ goodsId, count, ...data }) => {
  * @description 获取购物车列表数据
  * @returns Promise
  */
-export const reqCartList = () => {
-  return http.get<Cart[]>('/cart/getCartList')
+export const reqCartList = <T = Cart>() => {
+  return http.get<T[]>('/cart/getCartList')
 }
 
 /**

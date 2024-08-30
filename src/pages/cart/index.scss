@@ -1,0 +1,110 @@
+.cart-empty {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30Px;
+}
+
+// 商品列表样式
+.goods-wrap {
+  padding: 16px 0px 100px 0px;
+
+  .goods-item {
+    .taroify-button {
+      height: 100%;
+    }
+    .goods-swipe {
+      width: 100%;
+
+      .goods-info {
+        display: flex;
+        align-items: center;
+        padding: 24px 16px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        background-color: white;
+        box-sizing: border-box;
+        transition: transform 1s cubic-bezier(0.18, 0.89, 0.32, 1) !important;
+
+        .left {
+          /* width: 56px; */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 20Px;
+        }
+
+        .mid {
+          width: 114Px;
+          height: 125Px;
+
+          .img {
+            height: 100%;
+          }
+        }
+
+
+
+        .right {
+          height: 125Px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-left: 10Px;
+
+          .title {
+            flex: 1;
+            flex-shrink: 0;
+            font-size: 26px;
+            color: #333;
+            line-height: 44px;
+            font-weight: 400;
+            overflow: hidden;
+            word-break: break-word;
+          }
+
+          .buy {
+            display: flex;
+            justify-content: space-between;
+
+            .price {
+              display: flex;
+              color: #fa4126;
+              font-size: 36px;
+
+              .symbol {
+                font-size: 10Px;
+                margin-right: 2Px;
+                margin-top: 8Px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.action-bar {
+  padding: 12px 20px;
+
+  .computed-total {
+    flex: 1;
+    margin: 0 10px;
+    margin-right: 30px;
+    text-align: right;
+
+    .total-price {
+      color: #ee0a24;
+      font-size: 36px;
+      font-weight: 500;
+    }
+  }
+
+  .order-btn {
+    width: 220px;
+  }
+}

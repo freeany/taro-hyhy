@@ -20,6 +20,8 @@ export default function GoodsList() {
     category2Id: '' // 二级分类 id
   })
 
+  console.log(123);
+
   const getGoodsList = useCallback(async () => {
     setIsLoading(true)
     const result = await reqGoodsList(requestParams)
