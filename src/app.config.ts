@@ -64,6 +64,14 @@ export default defineAppConfig({
         "pages/goods/detail/index"
       ]
     },
+    {
+      "root": "modules/orderPayModule",
+      "name": "orderPayModule",
+      "pages": [
+        "pages/order/detail/index",
+        "pages/order/list/index"
+      ]
+    }
   ],
   preloadRule: {
     "pages/my/index": {
@@ -74,6 +82,10 @@ export default defineAppConfig({
       "network": "all",
       "packages": ["goodModule"]
     },
+    "pages/cart/index": {
+      "network": "all",
+      "packages": ["orderPayModule"]
+    }
   },
   requiredPrivateInfos: ["getLocation", "chooseLocation"],
   permission: {

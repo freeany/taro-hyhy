@@ -29,17 +29,17 @@ export default function My() {
 
   const initpanel = useMemo(() => ([
     {
-      url: '/pages/order/list/index',
+      url: '/modules/orderPayModule/pages/order/list/index',
       title: '商品订单',
       iconfont: 'icon-dingdan'
     },
     {
-      url: '/pages/order/list/index',
+      url: '/modules/orderPayModule/pages/order/list/index',
       title: '礼品卡订单',
       iconfont: 'icon-lipinka'
     },
     {
-      url: '/pages/order/list/index',
+      url: '/modules/orderPayModule/pages/order/list/index',
       title: '退款/售后',
       iconfont: 'icon-tuikuan'
     }

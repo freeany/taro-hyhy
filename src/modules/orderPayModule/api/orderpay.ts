@@ -56,5 +56,5 @@ export const reqPayStatus = (orderNo) => {
  * @returns Promise
  */
 export const reqOrderList = (page, limit) => {
-  return http.get(`/order/order/${page}/${limit}`)
+  return http.get<any>(`/order/order/${page}/${limit}`)
 }
