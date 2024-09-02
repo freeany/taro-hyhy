@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  "entryPagePath": "pages/cart/index",
+  "entryPagePath": "pages/my/index",
   pages: [
     'pages/index/index',
     'pages/category/index',
@@ -51,7 +51,9 @@ export default defineAppConfig({
       "name": "settingModule",
       "pages": [
         "pages/setting/index",
-        "pages/profile/index"
+        "pages/profile/index",
+        "pages/address/list/index",
+        "pages/address/add/index",
       ]
     },
     {
@@ -63,7 +65,7 @@ export default defineAppConfig({
       ]
     },
   ],
-  "preloadRule": {
+  preloadRule: {
     "pages/my/index": {
       "network": "all",
       "packages": ["settingModule"]
@@ -72,5 +74,11 @@ export default defineAppConfig({
       "network": "all",
       "packages": ["goodModule"]
     },
+  },
+  requiredPrivateInfos: ["getLocation", "chooseLocation"],
+  permission: {
+    "scope.userLocation": {
+      "desc": "获取地理位置信息用于填写收货地址"
+    }
   },
 })

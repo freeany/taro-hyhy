@@ -25,7 +25,7 @@ export default function Setting() {
         <View
           onClick={() => {
             Taro.navigateTo({
-              url: '/modules/settingModule/pages/address/list/list?flag=1'
+              url: '/modules/settingModule/pages/address/list/index?flag=1'
             })
           }}
           hover-className='none'

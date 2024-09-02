@@ -20,13 +20,14 @@ export default function CartContainer() {
   const [emptyDes, setEmptyDes] = useState('还没有添加商品，快去添加吧～')
 
   const totalPrice = useMemo(() => {
-    const list = []
-    for (let index = 0; index < num; index++) {
-      list.push(index)
-    }
-    console.log(num, list)
-
-    return list
+    let price = 0
+    cartList.forEach((item) => {
+      // 需要判断商品是否是选中的状态，isChecked 是否等于 1
+      if (item.isChecked === 1) {
+        price += item.price * item.count
+      }
+    })
+    return price
   }, [cartList])
 
   const setOpenEvent = (cart: CartGoods, open: SwipeCellPosition, isOpen: boolean) => {
@@ -244,7 +245,7 @@ export default function CartContainer() {
           全选
         </Checkbox>
         <View className='computed-total'>
-          合计:<Text className='total-price'>￥{totalPrice * 100}</Text>
+          合计:<Text className='total-price'>￥{totalPrice}</Text>
         </View>
         <Button className='order-btn' variant='contained' shape='round' color='danger'>
           去结算

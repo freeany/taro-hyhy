@@ -1,8 +1,8 @@
 import http from '@/utils/http'
-
+import {Address, AddressListType} from './types/address'
 /** 获取收货地址列表 */
 export const reqAddressList = () => {
-  return http.get('/userAddress/findUserAddress')
+  return http.get<AddressListType>('/userAddress/findUserAddress')
 }
 
 /**
@@ -20,7 +20,7 @@ export const reqDelAddress = (id) => {
  * @returns Promise
  */
 export const reqAddressInfo = (id) => {
-  return http.get(`/userAddress/${id}`)
+  return http.get<Address>(`/userAddress/${id}`)
 }
 
 /**
